@@ -6,13 +6,13 @@ pipeline {
         stage ('Docker login & Building image') {
             steps {
                 sh ' docker login -u $DOCKER_USER -p $DOCKER_PASS '
-                sh 'docker build -t ravivarman46/javaapp:v1 .'
+                sh 'docker build -t yasminjeelani/myjavaimage:v1 .'
             }
         }
 
         stage ('Pushing the Docker image to DockerHub') {
             steps {
-                sh 'docker push ravivarman46/javaapp:v1'
+                sh 'docker push yasminjeelani/myjavaimage:v1'
             }
         }
         
@@ -21,7 +21,7 @@ pipeline {
                 script {
                     sshagent(['ssh']) {
                         // Execute the command within the sshagent block using sh step
-                        sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.61.101.102 "docker stop javaapp; docker rm javaapp; docker run -d -it --name javaapp -p 80:8080 ravivarman46/javaapp:v1"'
+                        sh 'ssh -o StrictHostKeyChecking=no ubuntu@65.2.177.250 "docker stop javaapp; docker rm javaapp; docker run -d -it --name javaapp -p 80:8080 ravivarman46/javaapp:v1"'
                     }
                 }
             }
