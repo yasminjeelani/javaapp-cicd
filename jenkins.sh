@@ -2,7 +2,7 @@
 
 #installing java:
 apt-get update
-apt-get install -y openjdk-17-jre
+apt-get install -y openjdk-17-jdk
 
 #installing jenkins:
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
