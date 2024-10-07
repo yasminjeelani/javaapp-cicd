@@ -22,7 +22,7 @@ WORKDIR /app-runtime
 COPY --from=build /app/target/spring-boot-docker.jar .
 
 #exposing the application:
-EXPOSE 8080
+EXPOSE 8000
 
 #container starting command:
 CMD ["java", "-jar", "spring-boot-docker.jar"]
