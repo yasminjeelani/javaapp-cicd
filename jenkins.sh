@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #installing java:
-apt-get update
-apt-get install -y openjdk-17-jdk
+sudo apt-get update
+sudo apt-get install -y openjdk-17-jdk
 
 #installing jenkins:
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
@@ -14,7 +14,7 @@ sudo apt-get update
 sudo apt-get install jenkins -y
 
 #installing docker:
-apt-get install -y docker.io
+sudo apt-get install -y docker.io
 
 #checking the packages:
 echo "---------------------------------------"
