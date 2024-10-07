@@ -21,7 +21,7 @@ pipeline {
                 script {
                     sshagent(['ssh']) {
                         // Execute the command within the sshagent block using sh step
-                        sh 'ssh -o StrictHostKeyChecking=no ubuntu@13.233.238.185 "docker run -d -it --name javaapp -p 80:8080 yasminjeelani/myjavaimage:v1"'
+                        sh 'ssh -o StrictHostKeyChecking=no ubuntu@16.171.195.19 docker run -d -it --name javaapp -p 80:8080 yasminjeelani/myjavaimage:v1"'
                     }
                 }
             }
